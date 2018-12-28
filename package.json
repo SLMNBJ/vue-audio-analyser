@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +12,8 @@
   "dependencies": {
     "express": "^4.16.4",
     "youtube-audio-stream": "^0.2.0"
+  },
+  "engines": {
+    "node": "9.x.x"
   }
 }

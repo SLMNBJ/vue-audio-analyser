@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      .equalizer {
+        transform: scale(1, -1);
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" class="url-input" name="url" value="https://www.youtube.com/watch?v=97B_UHPLggs"/> <br />
+    <button class="submit-btn">Analyze</button>
+    <button class="pause-btn">Pause</button>
+    <br>
+    <br>
+    <br>
+    <div id="player"></div>
+    <div class="graph-container">
+      <canvas class="samples"></canvas> <br />
+      <br />
+      <br />
+      <canvas class="equalizer"></canvas>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

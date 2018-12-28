@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const http = require('http').Server(app);
 const youtubeStream = require('youtube-audio-stream');
+const port = process.env.PORT || 3000;
 
 app.use(express.static('static'));
 
@@ -17,6 +18,6 @@ app.get('/stream', function(req, res) {
   }
 });
 
-http.listen(3000, () => {
-  console.log('http://localhost:3000 is running...');
+http.listen(port, () => {
+  console.log(`http://localhost:${port} is running...`);
 });

@@ -1,5 +1,6 @@
 class MusicGraph {
   constructor() {
+    this.loading = document.querySelector('.loading');
     this.submitBtn = document.querySelector('.submit-btn');
     this.pauseBtn = document.querySelector('.pause-btn');
     this.urlInput = document.querySelector('.url-input');
@@ -28,6 +29,7 @@ class MusicGraph {
       const value = this.urlInput.value;
       if(this.isUrl(value)) {
         this.url = value;
+        this.loading.classList.add('show');
         this.getStream();
       } else {
         // che facciamo ?
@@ -81,12 +83,13 @@ class MusicGraph {
       this.audioSource.buffer = decodedAudio;
       this.audioSource.connect(this.analyser);
       this.analyser.connect(this.atx.destination);
+      this.loading.classList.remove('show');
       this.initCanvas();
       setTimeout(() => {
         this.audioSource.start(this.atx.currentTime);
         this.audioSource.onended = this.audioEndHandler;
         this.draw();
-      }, 100);
+      }, 300);
     });
   }
 

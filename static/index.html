@@ -10,10 +10,23 @@
       .equalizer {
         transform: scale(1, -1);
       }
+      .loading {
+        visibility: hidden;
+        opacity: 0;
+        padding-left: 20px;
+        font-family: monospace;
+        transition: opacity .3s;
+      }
+      .loading.show {
+        opacity: 1;
+        visibility: visible;
+      }
     </style>
   </head>
   <body>
-    <input type="text" class="url-input" name="url" value="https://www.youtube.com/watch?v=97B_UHPLggs"/> <br />
+    <input type="text" class="url-input" name="url" value="https://www.youtube.com/watch?v=97B_UHPLggs"/>
+    <span class="loading">loading audio data...</span>
+    <br />
     <button class="submit-btn">Analyze</button>
     <button class="pause-btn">Pause</button>
     <br>
